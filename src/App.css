@@ -10,7 +10,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  width: 500px
+  width: 100%; /* Change width to 100% for mobile responsiveness */
+  padding: 10px; /* Add padding for better spacing on mobile */
 }
 
 /* Header */
@@ -18,41 +19,42 @@ h1 {
   color: #2b2828;
   padding: 1rem;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem; /* Adjust font size for mobile */
   justify-content: center;
 }
 
 /* Header 2 */
 h2 {
   color: #2b2828;
-  padding-top: 1rem;
-  font-size: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem; /* Adjust font size for mobile */
   text-align: center;
   justify-content: center;
 }
+
 p {
   color: #2b2828;
+  font-size: 16px; /* Adjust font size for mobile */
   text-align: center;
-  font-size: 20px;
   justify-content: center;
 }
 
 /* Header 3 */
 h3 {
-  padding-left: 20px
+  padding-left: 20px;
 }
 
 .content-container {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 100%; /* Change max-width to 100% for mobile responsiveness */
+  margin: 0; /* Remove margin for better spacing on mobile */
+  padding: 10px; /* Add padding for better spacing on mobile */
 }
 
-/* ArticleList*/
+/* ArticleList */
 .article-list {
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center; /* Center align items for better mobile layout */
   align-items: center;
-  /* max-width: 1000px; */
   padding: 1rem;
 }
 
@@ -67,37 +69,31 @@ h3 {
   background-color: #fff;
   box-shadow: 0px 0px 5px 0px #998b8b;
   transition: transform 0.2s ease-in-out;
+  width: 90%; /* Adjust width for mobile */
+  margin: 0 auto; /* Center the card on mobile */
 }
 
-.article-card:hover {
-  transform: scale(1.03);
-}
-
+/* ArticleCard Image */
 .article-card img {
-  width: 340px;
+  width: 100%; /* Make the image responsive to the card width */
   height: auto;
-  padding: 20px;
-  padding-right: -20px;
 }
 
 /* Right-hand side */
-.article-content {
-  padding-top: 10px;
-}
-
-.article-card-content h2 {
+.article-content h2 {
   font-weight: bold;
   margin: 0;
   color: #2b2828;
   font-size: 1.5rem;
-  text-align: left;
-  justify-content: left;
+  text-align: center; /* Center align for mobile */
+  justify-content: center;
 }
 
-.article-card-content p {
+.article-content p {
   color: #555;
   font-size: 1.2rem;
-  text-align: left;
+  text-align: center; /* Center align for mobile */
+  justify-content: center;
 }
 
 /* Nav */
@@ -106,6 +102,8 @@ nav {
   color: #fff;
   padding: 1px;
 }
+
+/* Nav ul */
 nav ul {
   list-style: none;
   display: flex;
@@ -113,9 +111,11 @@ nav ul {
   padding: 0;
   list-style-type: none;
 }
+
 nav li {
   margin: 0 1rem;
 }
+
 nav a {
   text-decoration: none;
   color: #fff;
@@ -123,6 +123,7 @@ nav a {
   padding: 0.5rem 1rem;
   transition: background-color 0.3s;
 }
+
 nav a:hover {
   text-decoration: none;
   color: #fff;
@@ -145,21 +146,20 @@ ul {
   display: block;
   margin: 0 auto;
   width: 96.4%;
-  height: 600px;
+  height: 300px; /* Adjust height for mobile */
   object-fit: cover;
 }
 
 .single-article-body {
   padding: 20px;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  text-align: left
+  text-align: center; /* Center align text for mobile */
 }
 
 .single-article-info {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row; /* Display author and timeAgo side by side */
 }
 
 .author {
@@ -176,14 +176,14 @@ ul {
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
-  background-color: #c1ccdd
+  background-color: #c1ccdd;
 }
 
-/* CommentsList*/
+/* CommentsList */
 .comments-list {
   align-items: center;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
 /* CommentCard */
@@ -195,16 +195,8 @@ ul {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-}
-
-.comment-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #4e4f52;
-  color: #ffffff;
-  padding: 5px;
-  border-radius: 5px 5px 0 0;
+  width: 90%; /* Adjust width for mobile */
+  margin: 0 auto; /* Center the card on mobile */
 }
 
 .comment-card-header h3 {
@@ -216,22 +208,21 @@ ul {
 .comment-card-header p {
   margin: 0;
   font-size: 1rem;
-  padding-right: 5px;
   color: #ffffff;
-  justify-content: left
+  justify-content: left;
 }
 
 .comment-body {
   font-size: 1rem;
   padding: 10px;
-  text-align: left
+  text-align: center; /* Center align text for mobile */
 }
 
 .comment-votes {
   font-size: 0.9rem;
   color: #555;
   padding-left: 10px;
-  text-align: left;
+  text-align: center; /* Center align text for mobile */
 }
 
 /* Screen at or below 768 pixels */
