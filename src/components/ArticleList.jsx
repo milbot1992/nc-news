@@ -29,7 +29,7 @@ export default function ArticleList() {
             {articles.map(({ article_id, title, article_img_url, topic, created_at }) => (
                 <Fragment key={article_id}>
                 <li>
-                <Link to={`/articles/${article_id}`}>
+                <Link to={`/news/${article_id}`}>
                     <ArticleCard
                     title={title}
                     article_img_url={article_img_url}

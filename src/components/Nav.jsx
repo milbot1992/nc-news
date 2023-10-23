@@ -5,16 +5,16 @@ export default function Nav () {
         <nav>
             <ul>
                 <li>
-                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/news'>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/coding'>Coding</NavLink>
+                    <NavLink to='/news/coding'>Coding</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/football'>Football</NavLink>
+                    <NavLink to='/news/football'>Football</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/cooking'>Cooking</NavLink>
+                    <NavLink to='/news/cooking'>Cooking</NavLink>
                 </li>
             </ul>
         </nav>
