@@ -1,3 +1,12 @@
+/* Header */
+h1 {
+  color: #2b2828;
+  padding: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  justify-content: center;
+}
+
 /* Header 2 */
 h2 {
   color: #2b2828;
@@ -66,15 +75,6 @@ p {
   font-style: italic;
   font-size: 1.2rem;
   text-align: left;
-}
-
-/* Header */
-h1 {
-  color: #2b2828;
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
-  justify-content: center;
 }
 
 /* Nav */
