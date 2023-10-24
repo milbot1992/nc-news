@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom'
 import '../Single-article.css'
 import Loading from "./Loading";
 import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
+import AddCommentIcon from '@mui/icons-material/AddComment';
+import { postComment } from "../api";
 
 export default function SingleArticle() {
     const { article_id } = useParams();
@@ -17,7 +19,11 @@ export default function SingleArticle() {
     const [comments, setComments] = useState([])
     const [loading, setLoading] = useState(true);
     const [userLikes, setUserLikes] = useState(0);
-    const [isErr, setIsErr] = useState(false);
+    const [isLikesErr, setIsLikesErr] = useState(false);
+    const [showCommentForm, setShowCommentForm] = useState(false);
+    const [commentText, setCommentText] = useState('');
+    const [isAdding, setIsAdding] = useState(false)
+    const [isPostErr, setIsPostErr] = useState(false);
     
     useEffect(() => {
         getArticleById(article_id)
@@ -51,9 +57,33 @@ export default function SingleArticle() {
             console.log(response);
         })
         .catch((err) => {
-            setIsErr(true);
+            setIsLikesErr(true);
             setUserVotes(0);
         });
+    }
+
+    const handlePostComment = () => {
+        if (commentText.trim() !== '') {
+            setIsAdding(true)
+            const commentToBeAdded = {
+                                username: 'tickle122',
+                                body: commentText
+                                }
+
+            postComment(article_id, commentToBeAdded)
+                .then((response) => {
+                    const newComment = response.data.comment
+                    setComments([newComment, ...comments]);
+                    setCommentText('');
+                    setIsAdding(false)
+                    setIsPostErr(false)
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setIsAdding(false)
+                    setIsPostErr(true)
+                });
+        }
     }
 
     if (loading) return <Loading />;
@@ -80,15 +110,30 @@ export default function SingleArticle() {
                 updateAPILikes={updateAPILikes} 
                 setUserLikes = {setUserLikes} 
                 userLikes = {userLikes} 
-                isErr = {isErr}/>
+                isLikesErr = {isLikesErr}/>
             <h3 className="comment-count">
                 <a href="#first-comment-card">
                     <ChatRoundedIcon />
-                    {comment_count}
+                    &nbsp;&nbsp;{comment_count}
                 </a>
             </h3>
         </div>
-
+        <div className='post-comment' onClick={() => setShowCommentForm(!showCommentForm)}>
+            <AddCommentIcon />
+            <span>&nbsp;&nbsp;Leave a comment</span>
+        </div>
+        
+        {showCommentForm && (
+                <div className="comment-form">
+                    <textarea
+                        placeholder="Write your comment here..."
+                        value={commentText}
+                        onChange={(e) => setCommentText(e.target.value)}
+                    />
+                    <button onClick={handlePostComment}>{isAdding ? 'Posting...' : 'Post Comment'}</button>
+                </div>
+        )}
+        {isPostErr && <p className = 'error-text'>Error posting comment</p>}
         <ul className='comments-list'>
                 {comments.length === 0 ? (
                     <li>No comments yet</li>

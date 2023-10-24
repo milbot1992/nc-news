@@ -2,7 +2,10 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 export default function CommentCard({ body, author, votes, created_at }) {
     
-    const timeAgo = formatDistanceToNow(new Date(created_at), { addSuffix: true });
+    let timeAgo = "";
+    if (Date.parse(created_at)) {
+        timeAgo = formatDistanceToNow(new Date(created_at), { addSuffix: true });
+    }
     
     return (
         <section className="comment-card">
