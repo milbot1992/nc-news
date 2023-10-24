@@ -90,19 +90,23 @@ export default function SingleArticle() {
         </div>
 
         <ul className='comments-list'>
-            {comments.map(({ comment_id, body, author, votes, created_at }, index) => (
-                <Fragment key={comment_id}>
-                <li id={index === 0 ? 'first-comment-card' : ''}>
-                    <CommentCard
-                        body={body}
-                        author={author}
-                        votes={votes}
-                        created_at={created_at}
-                    />
-                </li>
-                </Fragment>
-            ))}
-        </ul>
+                {comments.length === 0 ? (
+                    <li>No comments yet</li>
+                ) : (
+                        comments.map(({ comment_id, body, author, votes, created_at }, index) => (
+                            <Fragment key={comment_id}>
+                                <li id={index === 0 ? 'first-comment-card' : ''}>
+                                    <CommentCard
+                                        body={body}
+                                        author={author}
+                                        votes={votes}
+                                        created_at={created_at}
+                                    />
+                                </li>
+                            </Fragment>
+                        ))
+                    )}
+            </ul>
         </>
     );
 }
