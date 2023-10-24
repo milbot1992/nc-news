@@ -12,7 +12,6 @@ export default function ArticleCard({ title, article_img_url, topic, created_at 
             />
             <div className="article-card-content">
             <h2>{title}</h2>
-            <p>{created_at}</p>
             <p>⏲️{timeAgo}  |  {topic}</p>
             </div>
         </section>

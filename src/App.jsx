@@ -14,10 +14,8 @@ function App() {
       <div className = 'content-container'>
         <Routes>
           <Route path="/news" element={<ArticleList topic="all" />} />
-          <Route path="/news/coding" element={<ArticleList topic="coding" />} />
-          <Route path="/news/football" element={<ArticleList topic="football" />} />
-          <Route path="/news/cooking" element={<ArticleList topic="cooking" />} />
-          <Route path="/news/:article_id" element={<SingleArticle />} />
+          <Route path="/news/:topic" element={<ArticleList />} />
+          <Route path="/news/articles/:article_id" element={<SingleArticle />} />
         </Routes>
       </div>
     </>

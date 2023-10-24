@@ -2,14 +2,15 @@ import ArticleCard from "./ArticleCard";
 import { useEffect, useState, Fragment } from "react";
 import { getArticles } from "../api.js";
 import Loading from "./Loading";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function ArticleList() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const { topic } = useParams()
+    
     useEffect(() => {
-        getArticles()
+        getArticles(topic)
         .then((articles) => {
             setArticles(articles);
             setLoading(false);
@@ -17,7 +18,7 @@ export default function ArticleList() {
         .catch((err) => {
             console.log(err);
         });
-    }, []);
+    }, [topic]);
 
     if (loading) return <Loading />;
 
@@ -29,7 +30,7 @@ export default function ArticleList() {
             {articles.map(({ article_id, title, article_img_url, topic, created_at }) => (
                 <Fragment key={article_id}>
                 <li>
-                <Link to={`/news/${article_id}`}>
+                <Link to={`/news/articles/${article_id}`}>
                     <ArticleCard
                     title={title}
                     article_img_url={article_img_url}
