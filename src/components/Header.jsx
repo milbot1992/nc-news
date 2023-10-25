@@ -1,7 +1,9 @@
+import NCNews from '../assets/NCNews.png'
+
 export default function Header () {
     return (
         <>
-        <h1>NC News</h1>
+        <img className = 'logo-image' src={NCNews} alt='N C News logo'></img>
         </>
     )
 }

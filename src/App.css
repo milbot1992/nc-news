@@ -13,13 +13,23 @@ body {
   width: 500px
 }
 
-/* Header */
-h1 {
-  color: #2b2828;
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
+.top-banner1 {
+  background-color: rgb(35, 21, 99);
+  margin: -5px;
+  height: 20px
+}
+.top-banner2 {
+  background-color: #c1ccdd;
+  margin: -5px
+}
+
+/* Header image */
+.logo-image {
+  height: 150px;
+  display: flex;
   justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 20px
 }
 
 /* Header 2 */
@@ -47,22 +57,23 @@ h3 {
   margin: 0 auto;
 }
 
-/* ArticleCard */
 
+/* Article List */
 .article-list {
   display: grid;
   grid-template-columns: 2fr 2fr;
 }
 
+/* ArticleCards */
 .article-card {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 10px;
-  justify-content: center;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0px 0px 5px 0px #998b8b;
   transition: transform 0.2s ease-in-out;
+  position: relative;
 }
 
 .article-card:hover {
@@ -77,9 +88,11 @@ h3 {
   padding-right: -20px;
 }
 
-/* Right-hand side */
+/* Right-hand side content*/
 .article-content {
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .article-card-content h2 {
@@ -89,13 +102,23 @@ h3 {
   font-size: 1.3rem;
   padding-right: 10px;
   text-align: left;
-  justify-content: left;
 }
 
 .article-card-content p {
   color: #555;
   font-size: 1.2rem;
   text-align: left;
+  text-transform: capitalize;
+}
+
+.comment-container {
+  display: flex;
+  align-items: left;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px; 
 }
 
 /* Nav */
@@ -105,6 +128,7 @@ nav {
   padding: 1px;
   text-transform: capitalize;
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -112,9 +136,11 @@ nav ul {
   padding: 0;
   list-style-type: none;
 }
+
 nav li {
   margin: 0 1rem;
 }
+
 nav a {
   text-decoration: none;
   color: #fff;
@@ -122,10 +148,19 @@ nav a {
   padding: 0.5rem 1rem;
   transition: background-color 0.3s;
 }
+
 nav a:hover {
   text-decoration: none;
   color: #fff;
   background-color: #555;
+}
+
+nav a.active {
+  background-color: #555;
+}
+
+nav a.inactive {
+  background-color: #333;
 }
 
 /* Anchors */
@@ -235,6 +270,21 @@ ul {
 
   .article-card-content h2 {
     font-size: 1.3rem;
+  }
+
+  .article-card-content p {
+    color: #555;
+    font-size: 1.2rem;
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  .logo-image {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 20px
   }
 
 }

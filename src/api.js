@@ -9,10 +9,12 @@ export const getTopics = () => {
     })
 }
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, sort_by, order) => {
+
     const query = {
         params: {
-            sort_by: 'created_at',
+            sort_by: sort_by,
+            order: order
         },
     };
     
@@ -25,7 +27,7 @@ export const getArticles = (topic) => {
         return res.data.articles;
     })
     .catch((error) => {
-        console.error(error);
+        console.log(error);
     });
 }
 
@@ -50,5 +52,6 @@ export const patchLikes = (value, article_id) => {
 }
 
 export const postComment = (article_id, commentToBeAdded) => {
+    console.log(article_id);
     return newsAPI.post(`/articles/${article_id}/comments`, commentToBeAdded)
 }
