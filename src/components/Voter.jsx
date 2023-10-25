@@ -1,9 +1,8 @@
-import { useState } from "react";
 import "../Voter.css";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 
-export default function Voter({ votes, updateAPILikes, setUserLikes, userLikes, isErr }) {
+export default function Voter({ votes, updateAPILikes, setUserLikes, userLikes, isLikesErr }) {
 
     const updateAllLikes = (value) => {
         setUserLikes((currentLikes) => {
@@ -14,7 +13,7 @@ export default function Voter({ votes, updateAPILikes, setUserLikes, userLikes, 
 
     return (
         <>
-        {!isErr ? (
+        {!isLikesErr ? (
             <div className="button-container">
             <button
                 disabled={userLikes === -1}
