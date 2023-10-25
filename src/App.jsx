@@ -9,6 +9,8 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
+      <p className = 'top-banner1'>&nbsp;</p>
+      <p className = 'top-banner2'>&nbsp;</p>
       <Header />
       <Nav />
       <div className = 'content-container'>

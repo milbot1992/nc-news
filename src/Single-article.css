@@ -133,6 +133,11 @@
     color: red
 }
 
+/* Successful post text */
+.post-text {
+    color: #007BFF;
+}
+
 /* Comment form */
 .comment-form {
     margin-top: 20px;
