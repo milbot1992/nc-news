@@ -12,7 +12,7 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
     useEffect(() => {
         const storedUser = localStorage.getItem('selectedUser');
         if (storedUser) {
-            setUser(storedUser);
+            setUser(JSON.parse(storedUser));
         }})
 
     let timeAgo = "";
@@ -49,7 +49,7 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
             </div>
             <p className = 'comment-body'>{body}</p>
             <p className = 'comment-votes'>Votes: {votes}</p>
-            {user===author && (
+            {user.username===author && (
             <>
             <button className = 'delete-comment-button' onClick={handleDelete} disabled={isDeleting || isDeleted}>
                 {isDeleting ? 'Deleting...' : 'Delete Comment'}

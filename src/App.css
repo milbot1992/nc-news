@@ -23,6 +23,19 @@ body {
   margin: -5px
 }
 
+/* Avatar */
+.avatar-small-image {
+  height: 80px;
+  width: 80px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0px;
+  position: absolute;
+  top: 60px;
+  right: 5px; 
+}
+
 /* Header image */
 .logo-image {
   height: 150px;
@@ -146,7 +159,7 @@ h3 {
   transition: transform 0.2s ease-in-out;
   position: relative;
   height: 250px;
-  width: 600px
+  width: 620px
 }
 
 .article-card:hover {
@@ -155,9 +168,9 @@ h3 {
 
 .article-card img {
   width: 250px;
-  height: 170px;
+  height: 205px;
   object-fit: cover;
-  padding: 20px;
+  margin: 20px;
   padding-right: -20px;
 }
 
@@ -281,7 +294,7 @@ ul {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
   .article-card img {
     height: 210px;
@@ -358,20 +371,22 @@ ul {
     display: block;
     margin: 20px 12px;
     width: 95%;
-    height: 350px
+    height: 370px
   }
 
   .article-card img {
     width: 90%;
-    height: 180px;
+    height: 170px;
     padding-bottom: 0px
   }
 
   .article-card-content {
+    padding-top: 0px;
     padding-left: 20px;
   }
 
   .article-card-content h2 {
+    padding-top: 0px;
     font-size: 1.2rem;
   }
 
@@ -383,11 +398,17 @@ ul {
   }
 
   .logo-image {
-    height: 100px;
+    height: 80px;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding-bottom: 0px
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    padding-top: 10px
+  }
+
+  .avatar-small-image {
+    height: 50px;
+    width: 50px;
+    top: 35px
   }
 
   h2 {
