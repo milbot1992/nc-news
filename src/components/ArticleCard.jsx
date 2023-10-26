@@ -15,7 +15,7 @@ export default function ArticleCard({ title, article_img_url, topic, created_at,
             <div className="article-card-content">
             <h2>{title}</h2>
             <p>{topic}  |  ⏲️{timeAgo}</p><br></br><br></br><br></br>
-            <p className = 'comment-container'>
+            <p className = 'comment-vote-container'>
                 <ChatRoundedIcon />
                 &nbsp;&nbsp;{comment_count}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ThumbUpOffAltIcon />&nbsp;{votes}
             </p>

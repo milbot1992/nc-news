@@ -9,6 +9,13 @@ export const getTopics = () => {
     })
 }
 
+export const getUsers = () => {
+    return newsAPI.get('/users')
+    .then ((res) => {
+        return res.data.users
+    })
+}
+
 export const getArticles = (topic, sort_by, order) => {
 
     const query = {
@@ -38,13 +45,22 @@ export const getArticleById = (article_id) =>{
     })
 }
 
-export const getCommentsById = (article_id) =>{
-    return newsAPI.get(`/articles/${article_id}/comments`)
+export const getCommentsById = (article_id, page) =>{
+    const query = {
+        params: {
+            p: page
+        },
+    };
+    return newsAPI.get(`/articles/${article_id}/comments`, query)
     .then(({data}) =>{
         const comments = data.comments
 
         return data.comments;
     })
+}
+
+export const deleteComment = (comment_id) => {
+    return newsAPI.delete(`/comments/${comment_id}`)
 }
 
 export const patchLikes = (value, article_id) => {

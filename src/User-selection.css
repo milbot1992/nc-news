@@ -1,0 +1,108 @@
+/* Header */
+.user-header {
+    margin-left: 20px;
+    padding-top: 20px;
+    font-size: 1.5rem
+}
+
+.user-text {
+    text-align: left;
+    padding-left: 40px;
+    padding-bottom: 20px
+}
+
+/* User List */
+.user-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 20px; 
+}
+
+/* User Cards */
+.user-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px #998b8b;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+}
+
+.user-card:hover {
+    transform: scale(1.03);
+}
+
+.user-card img {
+    max-width: 250px;
+    height: 170px;
+    padding: 20px;
+    padding-right: -20px;
+}
+
+.user-card-content h2 {
+    font-weight: bold;
+    margin: 0;
+    color: #2b2828;
+    font-size: 1.5rem;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.user-card-content p {
+    color: #555;
+    font-size: 1.2rem;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+/* Screen at or below 768 pixels */
+@media (max-width: 768px) {
+    .user-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, 1fr); 
+        margin-left: -20px
+    }
+
+    .user-card {
+        display: block;
+        height: 200px;
+        width: 150px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px 0px #998b8b;
+        transition: transform 0.2s ease-in-out;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .user-card:hover {
+        transform: scale(1.03);
+    }
+
+    .user-card img {
+        max-width: 70%;
+        height: 80px;
+        padding: 20px;
+        padding-right: 0;
+        margin: 0 auto; 
+    }
+
+    .user-header {
+        margin-left: 0px;
+        font-size: 1.3rem;
+    }
+
+    .user-text {
+        padding-left: 20px;
+    }
+
+    .user-card-content h2 {
+        font-size: 1rem;
+    }
+    
+    .user-card-content p {
+        font-size: 0.9rem;
+    }
+
+}
