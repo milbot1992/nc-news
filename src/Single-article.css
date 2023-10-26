@@ -1,18 +1,18 @@
 /* Single article */
-.image-banner {
+.topic-tag {
     background-color: #ddd;
     padding: 10px 0px;
-    width: 96.4%;
+    width: 150px;
+    text-align: center;
     margin: 0 auto;
-    text-align: right
+    text-transform: uppercase;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: 1125px
 }
 
-.image-banner {
-    background-color: #ddd;
-    padding: 10px 0px;
-    width: 96.4%;
-    text-align: right;
-    text-transform: uppercase;
+.topic-tag:hover {
+    background-color: #b8b8b8;
 }
 
 .single-article-image {
@@ -171,10 +171,85 @@
     background-color: #0056b3;
 }
 
+.load-more-comments {
+    background-color: #e1f1ff;
+    width: 97%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    margin-left: 20px
+}
+
+.delete-comment-button {
+    background-color: #7c7c7c;
+    color: #f5f5f5;
+    padding: 10px 10px;
+    margin-left: 1030px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    font-size: 17px
+}
+
+.delete-comment-button:hover {
+    color: #f5f5f5;
+    background-color: #29283b;
+}
+
 /* Screen at or below 768 pixels */
 @media (max-width: 768px) {
     .comment-form textarea {
         width: 85%;
         height: 60px
     }
+
+    .topic-tag {
+        background-color: #ddd;
+        padding: 5px 0px;
+        width: 120px;
+        text-align: center;
+        margin: 0 auto;
+        text-transform: uppercase;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        font-size: 13px
+    }
+
+    .delete-comment-button {
+        margin-left: 9px;
+        margin-top: 10px
+    }
+
+    .single-article-image {
+        height: 300px;
+        width: 94%;
+        object-fit: cover;
+    }
+
+    .load-more-comments {
+        width: 90%
+    }
+
+    body {
+        margin-bottom: 90px;
+    }
+
+    .comment-card-header h3 {
+        font-size: 1rem;
+    }
+    
+    .comment-card-header p {
+        font-size: 0.9rem;
+    }
+
+    .comment-form button {
+        font-size: 1.2rem;
+    }
+
+    .post-comment span {
+        font-size: 1.2rem;
+    }
+
 }

@@ -6,6 +6,7 @@ export default function Nav () {
     const [topics, setTopics] = useState([]);
     const location = useLocation()
 
+    const isWelcomePage = location.pathname === '/'
     const isHomeActive = location.pathname === '/news'
 
     useEffect(() => {
@@ -20,11 +21,12 @@ export default function Nav () {
 
     return (
         <nav>
+            {!isWelcomePage ? (
             <ul>
                 <li>
                     <NavLink 
                         to='/news'
-                        activeClassName={isHomeActive ? 'active' : 'inactive'}
+                        activeclassname={isHomeActive ? 'active' : 'inactive'}
                     >
                         Home
                     </NavLink>
@@ -33,13 +35,14 @@ export default function Nav () {
                     <li key={topic.slug}>
                         <NavLink 
                             to={`/news/${topic.slug}`}
-                            activeClassName="active"
+                            activeclassname="active"
                         >
                             {topic.slug}
                         </NavLink>
                     </li>
                 ))}
             </ul>
+            ) : '' }
         </nav>
     )
 }
