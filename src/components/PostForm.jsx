@@ -10,22 +10,22 @@ export default function PostForm ({article_id, setComments, comments, setComment
     const [postErr, setPostErr] = useState(false);
     const [isPost, setIsPost] = useState(false);
     const { user, setUser } = useContext(UserContext)
-    
 
     useEffect(() => {
         const storedUser = localStorage.getItem('selectedUser');
         if (storedUser) {
-            setUser(storedUser);
+            setUser(JSON.parse(storedUser));
         }})
 
     const handlePostComment = () => {
         if (commentText.trim() !== '') {
             setIsAdding(true)
+
             const commentToBeAdded = {
-                                username: user,
+                                username: user.username,
                                 body: commentText
                                 }
-            
+
             postComment(article_id, commentToBeAdded)
                 .then((response) => {
                     const newComment = response.data.comment

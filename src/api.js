@@ -65,6 +65,5 @@ export const patchLikes = (value, article_id) => {
 }
 
 export const postComment = (article_id, commentToBeAdded) => {
-    console.log(article_id);
     return newsAPI.post(`/articles/${article_id}/comments`, commentToBeAdded)
 }

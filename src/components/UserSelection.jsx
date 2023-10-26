@@ -13,8 +13,10 @@ export default function UserSelection() {
 
     useEffect(() => {
         const storedUser = localStorage.getItem('selectedUser');
+
         if (storedUser) {
-            setUser(storedUser)}
+            setUser(storedUser);
+        }
 
         getUsers()
         .then((users) => {
@@ -26,26 +28,27 @@ export default function UserSelection() {
         });
     }, []);
 
-    const handleUserAssign = (username) => {
-        setUser(username)
-        localStorage.setItem('selectedUser', username);
+    const handleUserAssign = (selectedUser) => {
+        setUser(selectedUser);
+        console.log(selectedUser);
+        localStorage.setItem('selectedUser', JSON.stringify(selectedUser));
     }
 
     if (loading) return <Loading />;
 
     return (
         <>
-        <h3 className = 'user-header'>Select User</h3>
-        <p className = 'user-text'>Select your user from the list below to be taken to the news articles</p>
-        <ul className = 'user-list'>
-            {userOptions.map(({ username, name, avatar_url }) => (
-                <Fragment key={username}>
+        <h3 className='user-header'>Select User</h3>
+        <p className='user-text'>Select your user from the list below to be taken to the news articles</p>
+        <ul className='user-list'>
+            {userOptions.map((user) => (
+                <Fragment key={user.username}>
                 <li>
-                <Link to={`/news`} onClick={() => handleUserAssign(username)}>
+                <Link to={`/news`} onClick={() => handleUserAssign(user)}>
                     <UserCard
-                        username={username}
-                        name={name}
-                        avatar_url={avatar_url}
+                        username={user.username}
+                        name={user.name}
+                        avatar_url={user.avatar_url}
                     />
                 </Link>
                 </li>
