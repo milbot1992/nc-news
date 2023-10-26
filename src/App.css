@@ -182,6 +182,7 @@ h3 {
   font-size: 1.2rem;
   text-align: left;
   text-transform: capitalize;
+  padding-right: 10px
 }
 
 .comment-vote-container {
@@ -251,6 +252,43 @@ ul {
 .article-list {
     list-style: none;
     padding: 0;
+}
+
+@media (max-width: 1500px) {
+  .left-pane {
+    margin-left: 0px;
+    width: 250px
+  }
+
+  .article-list {
+    display: block;
+  }
+
+  .article-card {
+    margin: 20px 12px;
+    width: 95%;
+    height: 250px
+  }
+
+  .article-card img {
+    height: 210px;
+    width: 300px;
+    padding-bottom: 0px
+  }
+
+  .article-card-content h2 {
+    padding-top: 21px
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .article-card img {
+    height: 210px;
+    width: 200px;
+    padding-bottom: 0px
+  }
+
 }
 
 
@@ -434,4 +472,6 @@ ul {
   }
 
 }
+
+
 

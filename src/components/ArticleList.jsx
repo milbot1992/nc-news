@@ -30,7 +30,11 @@ export default function ArticleList() {
             navigate(`?sort_by=${pathSortBy}&&order=${order}`);
         })
         .catch((err) => {
-            console.log(err);
+            if (err.response && err.response.status === 404) {
+                navigate('/notfound/topic');
+            } else {
+                console.log(err);
+            }
         });
     }, [topic, sortBy, order]);
 

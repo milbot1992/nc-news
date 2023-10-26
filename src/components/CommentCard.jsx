@@ -24,14 +24,17 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
         setIsDeleting(true)
         deleteComment(comment_id)
         .then(() => {
-            setComments((comments) => comments.filter((comment) => comment.comment_id !== comment_id));
+            setIsDeleted(true)
             setIsDeleting(false)
             setDeleteErr('')
-            setCommentCount((currentCount) => Number(currentCount) - 1)
-            setIsDeleted(true)
+
+            setTimeout(() => {
+                setCommentCount((currentCount) => Number(currentCount) - 1)
+                setComments((comments) => comments.filter((comment) => comment.comment_id !== comment_id));
+            }, 2000)
+            
         })
         .catch((error) => {
-            console.log(error);
             setIsDeleting(false)
             setDeleteErr('Error deleting comment')
         });
@@ -48,16 +51,16 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
             <p className = 'comment-votes'>Votes: {votes}</p>
             {user===author && (
             <>
-            <button className = 'delete-comment-button' onClick={handleDelete} disabled={isDeleting}>
+            <button className = 'delete-comment-button' onClick={handleDelete} disabled={isDeleting || isDeleted}>
                 {isDeleting ? 'Deleting...' : 'Delete Comment'}
             </button>
             {deleteErr !== '' && <p className = 'error-text'>{deleteErr}</p>}
+            {isDeleted && (
+            <p className='delete-text'>Comment Deleted - comment will disappear from list in a few seconds</p>
+            )}
             </>
             )}
         </section>
-        {isDeleted && (
-            <p className='delete-text'>Comment Deleted</p>
-        )}
         </>
     );
 }

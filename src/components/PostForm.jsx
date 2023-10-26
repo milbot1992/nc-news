@@ -61,7 +61,7 @@ export default function PostForm ({article_id, setComments, comments, setComment
                     value={commentText}
                     onChange={(e) => setCommentText(e.target.value)}
                 />
-                <button onClick={handlePostComment}>{isAdding ? 'Posting...' : 'Post Comment'}</button>
+                <button onClick={handlePostComment} disabled={isAdding}>{isAdding ? 'Posting...' : 'Post Comment'}</button>
             </div>
         )}
         {postErr !== '' && <p className = 'error-text'>{postErr}</p>}
