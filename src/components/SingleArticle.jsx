@@ -4,7 +4,7 @@ import { getArticleById } from "../api";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import Voter from "./Voter";
 import { patchLikes } from "../api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Single-article.css";
 import Loading from "./Loading";
 import ChatRoundedIcon from "@mui/icons-material/ChatRounded";
@@ -19,6 +19,7 @@ export default function SingleArticle() {
     const [isLikesErr, setIsLikesErr] = useState(false);
     const [comments, setComments] = useState([]);
     const [commentCount, setCommentCount] = useState(0)
+    const navigate = useNavigate();
 
     useEffect(() => {
         getArticleById(article_id)
@@ -28,7 +29,11 @@ export default function SingleArticle() {
             setCommentCount(article.comment_count)
         })
         .catch((err) => {
-            console.log(err);
+            if (err.response && err.response.status === 404) {
+                navigate('/notfound/article');
+            } else {
+                console.log(err);
+            }
         });
     }, [article_id]);
 

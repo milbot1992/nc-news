@@ -33,9 +33,6 @@ export const getArticles = (topic, sort_by, order) => {
     .then((res) => {
         return res.data.articles;
     })
-    .catch((error) => {
-        console.log(error);
-    });
 }
 
 export const getArticleById = (article_id) =>{

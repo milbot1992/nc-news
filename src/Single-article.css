@@ -50,7 +50,7 @@
     display: flex;
     justify-content: space-between;
     text-transform: capitalize;
-    background-color: #c1ccdd
+    background-color: #c1ccdd;
 }
 
 /* Comment count */
@@ -90,6 +90,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+}
+
+.delete-text {
+    color: #007BFF;
 }
 
 .comment-card-header {
@@ -185,7 +189,9 @@
     background-color: #7c7c7c;
     color: #f5f5f5;
     padding: 10px 10px;
-    margin-left: 1030px;
+    margin-left: 6px;
+    margin-top: 10px;
+    margin-right: 0px;
     border-radius: 5px;
     cursor: pointer;
     width: 200px;
