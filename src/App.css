@@ -398,11 +398,17 @@ ul {
   }
 
   .logo-image {
-    height: 100px;
+    height: 80px;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    padding-bottom: 0px
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    padding-top: 10px
+  }
+
+  .avatar-small-image {
+    height: 50px;
+    width: 50px;
+    top: 35px
   }
 
   h2 {
