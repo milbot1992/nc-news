@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import TuneIcon from '@mui/icons-material/Tune';
 import KeyboardControlKeyIcon from '@mui/icons-material/KeyboardControlKey';
+import PortfolioCard from "./PortfolioCard";
 
 export default function ArticleList() {
     const [articles, setArticles] = useState([]);
@@ -86,6 +87,9 @@ export default function ArticleList() {
         <div className="right-pane">
             <h2>Latest News</h2>
             <p>Browse through articles below</p>
+            <Link to={`/portfolio`}>
+                <PortfolioCard />
+            </Link>
             <ul className="article-list">
             {articles.map(
                 ({

@@ -11,20 +11,26 @@ import { UserContext } from './contexts/UserContext'
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UserProfile from "./components/UserProfile";
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import PortfolioPage from "./components/PortfolioPage";
 
 function App() {
   const { user, setUser } = useContext(UserContext)
+
+  const location = useLocation()
+
+  const isWelcomePage = location.pathname === '/'
 
   useEffect(() => {
     const storedUser = localStorage.getItem('selectedUser');
     if (storedUser) {
         setUser(JSON.parse(storedUser));
     }
-  }, [user])
+  }, [])
 
   return (
     <>
+      {!isWelcomePage ? (
       <Link to={`/user`}>
         {user !== undefined ? (
           <img className = 'avatar-small-image' title="User Profile" src={user.avatar_url} alt="User Avatar" />
@@ -32,6 +38,7 @@ function App() {
           <span>&nbsp;</span>
         )}
       </Link>
+      ) : '' }
       <p className = 'top-banner1'>&nbsp;</p>
       <p className = 'top-banner2'>&nbsp;</p>
       <Header />
@@ -39,6 +46,7 @@ function App() {
       <div className = 'content-container'>
         <Routes>
           <Route path="/" element={<UserSelection/>} />
+          <Route path="/portfolio" element={<PortfolioPage/>} />
           <Route path="/news" element={<ArticleList topic="all" />} />
           <Route path="/news/:topic" element={<ArticleList />} />
           <Route path="/news/articles/:article_id" element={<SingleArticle />} />

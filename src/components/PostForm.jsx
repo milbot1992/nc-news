@@ -15,7 +15,7 @@ export default function PostForm ({article_id, setComments, comments, setComment
         const storedUser = localStorage.getItem('selectedUser');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
-        }})
+        }}, [])
 
     const handlePostComment = () => {
         if (commentText.trim() !== '') {

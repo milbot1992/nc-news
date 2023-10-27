@@ -13,7 +13,7 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
         const storedUser = localStorage.getItem('selectedUser');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
-        }})
+        }}, [])
 
     let timeAgo = "";
     if (Date.parse(created_at)) {

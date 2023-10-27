@@ -8,7 +8,7 @@
     text-transform: uppercase;
     border-radius: 15px;
     margin-bottom: 10px;
-    margin-left: 1125px
+    margin-left: 25px
 }
 
 .topic-tag:hover {
@@ -51,6 +51,19 @@
     justify-content: space-between;
     text-transform: capitalize;
     background-color: #c1ccdd;
+}
+
+/* Portfolio article */
+.portfolio-article-body {
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    text-align: left
+}
+
+.portfolio-links {
+    color: blue;
+    text-decoration: underline
 }
 
 /* Comment count */

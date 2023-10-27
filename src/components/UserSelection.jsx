@@ -30,7 +30,6 @@ export default function UserSelection() {
 
     const handleUserAssign = (selectedUser) => {
         setUser(selectedUser);
-        console.log(selectedUser);
         localStorage.setItem('selectedUser', JSON.stringify(selectedUser));
     }
 
