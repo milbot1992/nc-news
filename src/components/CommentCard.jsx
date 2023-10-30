@@ -9,12 +9,6 @@ export default function CommentCard({ comment_id, body, author, votes, created_a
     const [isDeleted, setIsDeleted] = useState(false);
     const { user, setUser } = useContext(UserContext)
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem('selectedUser');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }}, [])
-
     let timeAgo = "";
     if (Date.parse(created_at)) {
         timeAgo = formatDistanceToNow(new Date(created_at), { addSuffix: true });
