@@ -21,13 +21,6 @@ function App() {
 
   const isWelcomePage = location.pathname === '/'
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('selectedUser');
-    if (storedUser) {
-        setUser(JSON.parse(storedUser));
-    }
-  }, [])
-
   return (
     <>
       {!isWelcomePage ? (
@@ -45,7 +38,7 @@ function App() {
       <Nav />
       <div className = 'content-container'>
         <Routes>
-          <Route path="/" element={<UserSelection/>} />
+          <Route path="/login" element={<UserSelection/>} />
           <Route path="/portfolio" element={<PortfolioPage/>} />
           <Route path="/news" element={<ArticleList topic="all" />} />
           <Route path="/news/:topic" element={<ArticleList />} />
