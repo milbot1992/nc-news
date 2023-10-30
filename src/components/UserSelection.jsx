@@ -12,12 +12,6 @@ export default function UserSelection() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const storedUser = localStorage.getItem('selectedUser');
-
-        if (storedUser) {
-            setUser(storedUser);
-        }
-
         getUsers()
         .then((users) => {
             setUserOptions(users);
@@ -30,7 +24,8 @@ export default function UserSelection() {
 
     const handleUserAssign = (selectedUser) => {
         setUser(selectedUser);
-        localStorage.setItem('selectedUser', JSON.stringify(selectedUser));
+        localStorage.setItem('username', selectedUser.username)
+        localStorage.setItem('userImg', selectedUser.avatar_url)
     }
 
     if (loading) return <Loading />;
