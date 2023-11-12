@@ -8,29 +8,52 @@ import PathNotFound from "./components/PathNotFound";
 import ArticleNotFound from "./components/ArticleNotFound";
 import TopicNotFound from "./components/TopicNotFound";
 import { UserContext } from './contexts/UserContext'
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 import UserProfile from "./components/UserProfile";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import PortfolioPage from "./components/PortfolioPage";
+import UserPopup from "./components/UserPopup.jsx";
 
 function App() {
   const { user, setUser } = useContext(UserContext)
+  const [showUserPopup, setShowUserPopup] = useState(false);
+  const navigate = useNavigate();
+
 
   const location = useLocation()
 
-  const isWelcomePage = location.pathname === '/'
+  const isWelcomePage = location.pathname === '/login'
+
+  const handleUserPopupToggle = () => {
+    setShowUserPopup(!showUserPopup);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    navigate('/login');
+    setShowUserPopup(!showUserPopup);
+  };
+
+  const handleUserProfile = () => {
+    navigate('/user');
+    setShowUserPopup(!showUserPopup);
+  }
 
   return (
     <>
       {!isWelcomePage ? (
-      <Link to={`/user`}>
-        {user !== undefined ? (
-          <img className = 'avatar-small-image' title="User Profile" src={user.avatar_url} alt="User Avatar" />
-        ) : (
-          <span>&nbsp;</span>
+      <>
+        <div onClick={handleUserPopupToggle}>
+          {user !== undefined ? (
+            <img className="avatar-small-image" title="User Profile" src={user.avatar_url} alt="User Avatar" />
+          ) : (
+            <span>&nbsp;</span>
+          )}
+        </div>
+        {showUserPopup && (
+          <UserPopup onClose={handleUserProfile} onLogout={handleLogout} />
         )}
-      </Link>
+      </>
       ) : '' }
       <p className = 'top-banner1'>&nbsp;</p>
       <p className = 'top-banner2'>&nbsp;</p>

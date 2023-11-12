@@ -16,12 +16,13 @@ export const getUsers = () => {
     })
 }
 
-export const getArticles = (topic, sort_by, order) => {
+export const getArticles = (topic, sort_by, order, currentPage) => {
 
     const query = {
         params: {
             sort_by: sort_by,
-            order: order
+            order: order,
+            p: currentPage
         },
     };
     
@@ -31,7 +32,9 @@ export const getArticles = (topic, sort_by, order) => {
     
     return newsAPI.get('/articles', query)
     .then((res) => {
-        return res.data.articles;
+        const total_count = res.data.total_count
+        const articles = res.data.articles
+        return {articles, total_count}
     })
 }
 

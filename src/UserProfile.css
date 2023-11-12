@@ -1,0 +1,64 @@
+.user-header {
+    margin-left: 50px
+}
+
+.user-sub-header {
+    margin-left: 30px
+}
+
+.no-articles-posted {
+    margin-left: 48px
+}
+
+.user-article-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px #998b8b;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    height: 150px;
+    width: 1000px
+}
+
+.user-article-card:hover {
+    transform: scale(1.03);
+}
+
+.user-article-card img {
+    width: 250px;
+    height: 110px;
+    object-fit: cover;
+    margin: 20px;
+    padding-right: -20px;
+}
+
+/* Right-hand side content*/
+.user-article-card-content h2 {
+    font-weight: bold;
+    margin: 0;
+    color: #2b2828;
+    font-size: 1.3rem;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.user-article-card-content p {
+    color: #555;
+    font-size: 1.2rem;
+    text-align: left;
+    text-transform: capitalize;
+    padding-right: 10px
+}
+
+.user-comment-vote-container {
+    display: flex;
+    align-items: left;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px; 
+}

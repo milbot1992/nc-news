@@ -14,6 +14,28 @@ body {
   width: 500px
 }
 
+/* User pop-up */
+.user-popup {
+  position: absolute;
+  top: 95px;
+  right: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.user-popup-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-popup-option:hover {
+  background-color: #f0f0f0;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px; 
@@ -89,12 +111,13 @@ h2 {
   color: #2b2828;
   padding-top: 1rem;
   font-size: 2rem;
-  text-align: center;
+  text-align: left;
   justify-content: center;
+  margin-left: 10px
 }
 p {
   color: #2b2828;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   justify-content: center;
 }
@@ -348,6 +371,23 @@ ul {
 .article-list {
     list-style: none;
     padding: 0;
+}
+
+.pagination {
+  padding-bottom: 25px;
+}
+
+.pagination button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination button.selected-page {
+  background-color: #ddd;
+  font-weight: bold;
+  padding: 10px
 }
 
 @media (max-width: 1500px) {

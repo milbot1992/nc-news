@@ -6,7 +6,7 @@ export default function Nav () {
     const [topics, setTopics] = useState([]);
     const location = useLocation()
 
-    const isWelcomePage = location.pathname === '/'
+    const isWelcomePage = location.pathname === '/login'
     const isHomeActive = location.pathname === '/news'
 
     useEffect(() => {
