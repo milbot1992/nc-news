@@ -26,6 +26,9 @@ The application will be accessible at http://localhost:5137
 
 ## Features
 Articles: View a list of articles, sorted by various criteria such as date or votes.
+
 Article Details: Click on an article to view its details, comments, and vote on it.
+
 Comments: Add, delete, and vote on comments associated with articles.
+
 Users: View user profiles and see their submitted articles.
