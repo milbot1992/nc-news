@@ -1,8 +1,8 @@
-# NC News
-Welcome to NC News! This repository contains the codebase for the NC News application, a social news aggregation, web content rating, and discussion website.
+# ME News
+Welcome to ME News! This repository contains the codebase for the ME News application, a social news aggregation, web content rating, and discussion website.
 
 ## Overview
-NC News is a full-stack application that allows users to view and interact with articles, comments, and users. The application is built using the MERN (MongoDB, Express.js, React, Node.js) stack.
+ME News is a full-stack application that allows users to view and interact with articles, comments, and users. The application is built using the MERN (MongoDB, Express.js, React, Node.js) stack.
 
 ### Hosted link
 This repo is hosted here: https://me-news.netlify.app/login
@@ -11,16 +11,16 @@ This repo is hosted here: https://me-news.netlify.app/login
 To run the NC News application locally, follow these steps:
 
 #### Clone the repository:
-git clone https://github.com/milbot1992/nc-news.git
+```git clone https://github.com/milbot1992/nc-news.git```
 
 #### Change into the project directory:
-cd nc-news
+```cd nc-news```
 
 #### Install the dependencies:
-npm install
+```npm install```
 
 #### Run the development server:
-npm run dev
+```npm run dev```
 
 The application will be accessible at http://localhost:5137
 
