@@ -8,7 +8,7 @@ ME News is a full-stack application that allows users to view and interact with 
 This repo is hosted here: https://me-news.netlify.app/login
 
 ## Getting Started
-To run the NC News application locally, follow these steps:
+To run the ME News application locally, follow these steps:
 
 #### Clone the repository:
 ```git clone https://github.com/milbot1992/nc-news.git```
